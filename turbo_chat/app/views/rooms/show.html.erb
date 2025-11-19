@@ -1,15 +1,17 @@
 <div class="ui-card">
 
-  <p>
-    <strong>Name:</strong>
-    <%= @room.name %>
-  </p>
+  <%= turbo_frame_tag "room" do %>
+    <p>
+      <strong>Name:</strong>
+      <%= @room.name %>
+    </p>
 
-  <p>
-    <%= link_to 'Edit', edit_room_path(@room) %> |
-    <%= link_to 'Back', rooms_path %>
-  </p>
-  
+    <p>
+      <%= link_to 'Edit', edit_room_path(@room) %> |
+      <%= link_to 'Back', rooms_path, data: { turbo: false } %>
+    </p>
+  <% end %>
+
   <div id="messages">
     <%= render @room.messages %>
   </div>

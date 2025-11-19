@@ -11,8 +11,8 @@
 
  turbo-frame {
    display: block;
-   border: 1px solid blue;
-   
+   border: 7px solid #FFAAD5;
+   border-radius: 10px;
  }
 
  body { 
