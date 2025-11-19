@@ -16,7 +16,11 @@ class  MessagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_room
-      @room = Room.find(params.require(:room_id))
+      @room = Room.find(params.require(:room_id))    
+    end
+    
+    def message_params
+      params.require(:message).permit(:content)
     end
 
     # Only allow a list of trusted parameters through.
