@@ -1,0 +1,20 @@
+<div class="ui-card">
+
+  <% content_for :title, "Rooms" %>
+
+  <h1>Chat Rooms</h1>
+
+  <%= link_to "create new room", new_room_path %>
+
+  <div id="rooms" class="room-section">
+    <% @rooms.each do |room| %>
+      <div style="margin: 5px;">
+        <%= render room %>
+        <p>
+          <%= link_to "go to this room", room %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+</div>
